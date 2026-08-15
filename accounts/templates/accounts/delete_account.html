@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Delete Account
+    </title>
+</head>
+
+
+<body>
+
+<h1>
+Delete Account
+</h1>
+
+
+<p>
+Enter your password to confirm deletion.
+</p>
+
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+
+    <button type="submit">
+        Delete Account
+    </button>
+
+</form>
+
+
+</body>
+
+</html>

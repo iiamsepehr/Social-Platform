@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Profile</title>
+</head>
+
+
+<body>
+
+
+<h1>
+Welcome {{ request.user.username }}
+</h1>
+
+
+<p>
+Email:
+{{ request.user.email }}
+</p>
+
+
+<p>
+Role:
+{{ request.user.role }}
+</p>
+
+<a href="{% url 'change_username' %}">
+    Change Username
+</a>
+<br>
+
+<a href="{% url 'change_email' %}">
+    Change Email
+</a>
+
+<br>
+
+<a href="{% url 'change_password' %}">
+    Change Password
+</a>
+
+<br>
+
+<a href="{% url 'delete_account' %}">
+    Delete Account
+</a>
+
+<br>
+
+<a href="{% url 'logout' %}">
+    Logout
+</a>
+
+
+</body>
+
+</html>

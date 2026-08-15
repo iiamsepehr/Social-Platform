@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Add User</title>
+</head>
+
+<body>
+
+<h1>
+    Add User
+</h1>
+
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Create User
+    </button>
+
+</form>
+
+
+<br>
+
+<a href="{% url 'admin_users' %}">
+    Back to Users
+</a>
+
+</body>
+
+</html>
