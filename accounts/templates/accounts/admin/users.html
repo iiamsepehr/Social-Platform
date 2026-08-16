@@ -18,31 +18,13 @@
     <thead>
 
         <tr>
-
-            <th>
-                Username
-            </th>
-
-            <th>
-                Email
-            </th>
-
-            <th>
-                Role
-            </th>
-
-            <th>
-                Created At
-            </th>
-
-            <th>
-                Banned
-            </th>
-
-            <th>
-                Timeout Until
-            </th>
-
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Created At</th>
+            <th>Banned</th>
+            <th>Timeout Until</th>
+            <th>Actions</th>
         </tr>
 
     </thead>
@@ -76,6 +58,70 @@
 
             <td>
                 {{ user.timeout_until }}
+            </td>
+
+            <td>
+                {% if user != request.user %}
+                    <!-- Delete -->
+                    <form method="POST"
+                          action="{% url 'admin_delete_user' user.id %}">
+
+                        {% csrf_token %}
+
+                        <button type="submit">
+                            Delete
+                        </button>
+
+                    </form>
+
+
+                    <!-- Ban / Unban -->
+                    {% if user.is_banned %}
+
+                        <form method="POST"
+                              action="{% url 'admin_unban_user' user.id %}">
+
+                            {% csrf_token %}
+
+                            <button type="submit">
+                                Unban
+                            </button>
+
+                        </form>
+
+                    {% else %}
+
+                        <form method="POST"
+                              action="{% url 'admin_ban_user' user.id %}">
+
+                            {% csrf_token %}
+
+                            <button type="submit">
+                                Ban
+                            </button>
+
+                        </form>
+
+                    {% endif %}
+
+
+                    <!-- Timeout -->
+                    <form method="POST"
+                          action="{% url 'admin_timeout_user' user.id %}">
+
+                        {% csrf_token %}
+
+                        <button type="submit">
+                            Timeout 10 min
+                        </button>
+
+                    </form>
+
+                {% else %}
+
+                    Current Admin
+
+                {% endif %}
             </td>
 
         </tr>

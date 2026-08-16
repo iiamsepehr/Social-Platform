@@ -78,4 +78,22 @@ urlpatterns = [
         name="admin_delete_user"
     ),
 
+    path(
+        "admin-panel/users/<int:user_id>/ban/",
+        admin_views.ban_user,
+        name="admin_ban_user"
+    ),
+
+    path(
+        "admin-panel/users/<int:user_id>/unban/",
+        admin_views.unban_user,
+        name="admin_unban_user"
+    ),
+
+    path(
+        "admin-panel/users/<int:user_id>/timeout/",
+        admin_views.timeout_user,
+        name="admin_timeout_user"
+    ),
+
 ]

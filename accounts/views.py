@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import SignupForm, ChangeUsernameForm, ChangeEmailForm, ChangePasswordForm, DeleteAccountForm
 from .decorators import admin_required
-
+from django.utils import timezone
 
 def signup(request):
 
@@ -60,9 +60,7 @@ def user_login(request):
     if request.method == "POST":
 
         username = request.POST["username"]
-
         password = request.POST["password"]
-
 
         user = authenticate(
             request,
@@ -70,8 +68,39 @@ def user_login(request):
             password=password
         )
 
-
         if user:
+
+            if user.is_banned:
+
+                messages.error(
+                    request,
+                    "Your account has been banned."
+                )
+
+                return redirect("login")
+
+
+            if (
+                user.timeout_until is not None
+                and user.timeout_until > timezone.now()
+            ):
+
+                messages.error(
+                    request,
+                    "Your account is temporarily unavailable."
+                )
+
+                return redirect("login")
+
+
+            if (
+                user.timeout_until is not None
+                and user.timeout_until <= timezone.now()
+            ):
+
+                user.timeout_until = None
+                user.save()
+
 
             login(
                 request,

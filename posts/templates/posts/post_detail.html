@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>{{ post.title }}</title>
+</head>
+
+<body>
+
+<h1>
+    {{ post.title }}
+</h1>
+
+<p>
+    Author:
+    {{ post.author.username }}
+</p>
+
+<p>
+    Created:
+    {{ post.created_at }}
+</p>
+
+<hr>
+
+<p>
+    {{ post.content }}
+</p>
+
+
+{% if request.user == post.author %}
+
+    <a href="{% url 'post_edit' post.id %}">
+        Edit
+    </a>
+    <br><br>
+
+    <form method="POST"
+          action="{% url 'post_delete' post.id %}">
+
+        {% csrf_token %}
+
+        <button type="submit">
+            Delete
+        </button>
+
+    </form>
+
+{% endif %}
+
+
+{% if request.user.is_authenticated and request.user.is_admin %}
+
+    <a href="{% url 'admin_edit_post' post.id %}">
+        Admin Edit
+    </a>
+
+    <br><br>
+
+    <form method="POST"
+          action="{% url 'admin_delete_post' post.id %}">
+
+        {% csrf_token %}
+
+        <button type="submit">
+            Admin Delete
+        </button>
+
+    </form>
+
+{% endif %}
+
+<br>
+
+<a href="{% url 'post_list' %}">
+    Back to Posts
+</a>
+
+</body>
+
+</html>
