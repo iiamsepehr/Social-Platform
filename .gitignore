@@ -2,3 +2,16 @@
 .idea/
 .idea/
 .idea/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+.env
+
+db.sqlite3
+
+.idea/
+.vscode/
+
+*.log

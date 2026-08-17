@@ -1,0 +1,705 @@
+[
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$PzSiwjsUhqZjqXGAeXeKUK$fangAXeijw/YQOhOSI+j00oadLS25s3ExR1QYtRPJzI=",
+    "last_login": "2026-08-16T21:42:15.224Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@test.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-08-12T14:28:47.086Z",
+    "role": "ADMIN",
+    "created_at": "2026-08-12T14:56:19.311Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$y5sB4WMJaocFuQsJ8UIMi8$cDcRKUNFyXhNNvE9WCInrvL/tILbS+xYrIFRWvR91WA=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "manager",
+    "first_name": "",
+    "last_name": "",
+    "email": "manager@test.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-08-12T14:28:47.300Z",
+    "role": "ADMIN",
+    "created_at": "2026-08-12T14:56:19.311Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$yVREGU44HwEMLVpJ8og3uU$2bdfxYvvjbSNj9tGN/Scc60yBZIlja0cFxOUF7laEbY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-12T15:01:55.808Z",
+    "role": "USER",
+    "created_at": "2026-08-12T15:01:56.020Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$OU0JS7jfpFkOaq1rBoAcdn$/332ONP56tiF9A1eMVnkaG0atut7Sg9vhRN2B7PaYFc=",
+    "last_login": "2026-08-16T15:03:00.150Z",
+    "is_superuser": false,
+    "username": "tst_changed_username_user_1",
+    "first_name": "",
+    "last_name": "",
+    "email": "tst.changed.email.user@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-12T17:46:26.825Z",
+    "role": "USER",
+    "created_at": "2026-08-12T17:46:27.039Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Y7nI1IyNT2ZFwr4aN8gHuR$9oguAMZNQ9ZhoKp29hjMQvOmy7Zrkccd8iB4nFFljXw=",
+    "last_login": "2026-08-16T19:34:28.584Z",
+    "is_superuser": false,
+    "username": "manual_user2",
+    "first_name": "",
+    "last_name": "",
+    "email": "test2@test.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-14T08:19:01.497Z",
+    "role": "USER",
+    "created_at": "2026-08-14T08:19:01.740Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ZEWnAtDkEnFt5gvH4dtnas$sTl12jXoKy11kt+b1ITqzkAoIJupEk1VJdmZzEXRlks=",
+    "last_login": "2026-08-17T09:18:22.619Z",
+    "is_superuser": false,
+    "username": "testuser1",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser1@userhub.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-16T19:36:02.338Z",
+    "role": "USER",
+    "created_at": "2026-08-16T19:36:02.338Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$iDMNOr6JTaOYfHRPaAvmaD$EUJjWXCh/w3AP/ZSmPK/rLE3eaCNb/tioF3kSvLlKLk=",
+    "last_login": "2026-08-16T21:44:28.092Z",
+    "is_superuser": false,
+    "username": "testuser2",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser2@userhub.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-16T19:36:02.575Z",
+    "role": "USER",
+    "created_at": "2026-08-16T19:36:02.575Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$nU4SqhuOfXdWii2j5MGlOf$Cn+NXdZ71K9q17T2YqwXnxY0dhaxVhyCo3QmpK2eIMk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser3",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser3@userhub.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-16T19:36:02.792Z",
+    "role": "USER",
+    "created_at": "2026-08-16T19:36:02.793Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$f8twgXKtt4pxq4YqELpwBz$zT0rGCtQLuEbpS1h3luweaKvCwm4QKp9ZPK1tDLWslY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser4",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser4@userhub.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-16T19:36:03.010Z",
+    "role": "USER",
+    "created_at": "2026-08-16T19:36:03.011Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$V5HoivYdR4FqILywBsW5fu$TEsSLvlzlaihhEGM5poWR4hXJ/LTD7LavTkHdehdnCI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser5",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser5@userhub.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-16T19:36:03.231Z",
+    "role": "USER",
+    "created_at": "2026-08-16T19:36:03.231Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$5FS4M24SlwZmHkHHNmtNMs$DHaf0eMILAwJ7iXp4PW6PDKiQJc5jLELs4MxizOYwco=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser6",
+    "first_name": "",
+    "last_name": "",
+    "email": "testuser6@userhub.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-16T19:36:03.451Z",
+    "role": "USER",
+    "created_at": "2026-08-16T19:36:03.451Z",
+    "is_banned": false,
+    "timeout_until": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.follow",
+  "pk": 1,
+  "fields": {
+    "follower": 8,
+    "following": 9,
+    "created_at": "2026-08-16T21:43:53.700Z"
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 1,
+  "fields": {
+    "recipient": 9,
+    "actor": 8,
+    "notification_type": "LIKE",
+    "post": 10,
+    "comment": null,
+    "created_at": "2026-08-16T21:00:31.116Z",
+    "is_read": false
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 2,
+  "fields": {
+    "recipient": 9,
+    "actor": 8,
+    "notification_type": "LIKE",
+    "post": 10,
+    "comment": null,
+    "created_at": "2026-08-16T21:04:17.379Z",
+    "is_read": false
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 3,
+  "fields": {
+    "recipient": 8,
+    "actor": 9,
+    "notification_type": "LIKE",
+    "post": 6,
+    "comment": null,
+    "created_at": "2026-08-16T21:40:07.196Z",
+    "is_read": false
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 4,
+  "fields": {
+    "recipient": 8,
+    "actor": 9,
+    "notification_type": "COMMENT",
+    "post": 6,
+    "comment": 2,
+    "created_at": "2026-08-16T21:40:14.178Z",
+    "is_read": false
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 5,
+  "fields": {
+    "recipient": 9,
+    "actor": 8,
+    "notification_type": "FOLLOW",
+    "post": null,
+    "comment": null,
+    "created_at": "2026-08-16T21:43:53.702Z",
+    "is_read": false
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 6,
+  "fields": {
+    "recipient": 12,
+    "actor": 8,
+    "notification_type": "FOLLOW",
+    "post": null,
+    "comment": null,
+    "created_at": "2026-08-17T09:32:25.905Z",
+    "is_read": false
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 7,
+  "fields": {
+    "recipient": 12,
+    "actor": 8,
+    "notification_type": "LIKE",
+    "post": 22,
+    "comment": null,
+    "created_at": "2026-08-17T09:32:30.179Z",
+    "is_read": false
+  }
+},
+{
+  "model": "accounts.notification",
+  "pk": 8,
+  "fields": {
+    "recipient": 12,
+    "actor": 8,
+    "notification_type": "COMMENT",
+    "post": 22,
+    "comment": 3,
+    "created_at": "2026-08-17T09:32:39.485Z",
+    "is_read": false
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 3,
+  "fields": {
+    "author": 6,
+    "title": "test post 3 by user1 ( edited )",
+    "content": "test post 3 by user1 ( edited )",
+    "created_at": "2026-08-16T13:15:20.013Z",
+    "updated_at": "2026-08-16T15:03:38.730Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 4,
+  "fields": {
+    "author": 6,
+    "title": "Django post",
+    "content": "Django",
+    "created_at": "2026-08-16T15:07:49.421Z",
+    "updated_at": "2026-08-16T15:07:49.421Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 5,
+  "fields": {
+    "author": 7,
+    "title": "Django post by user2",
+    "content": "Django post",
+    "created_at": "2026-08-16T15:11:11.169Z",
+    "updated_at": "2026-08-16T15:11:11.169Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 6,
+  "fields": {
+    "author": 8,
+    "title": "testuser1 Post 1",
+    "content": "This is test post 1 created by testuser1.",
+    "created_at": "2026-08-16T19:36:03.670Z",
+    "updated_at": "2026-08-16T19:36:03.670Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 7,
+  "fields": {
+    "author": 8,
+    "title": "testuser1 Post 2",
+    "content": "This is test post 2 created by testuser1.",
+    "created_at": "2026-08-16T19:36:03.673Z",
+    "updated_at": "2026-08-16T19:36:03.673Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 8,
+  "fields": {
+    "author": 8,
+    "title": "testuser1 Post 3",
+    "content": "This is test post 3 created by testuser1.",
+    "created_at": "2026-08-16T19:36:03.674Z",
+    "updated_at": "2026-08-16T19:36:03.674Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 9,
+  "fields": {
+    "author": 8,
+    "title": "testuser1 Post 4",
+    "content": "This is test post 4 created by testuser1.",
+    "created_at": "2026-08-16T19:36:03.677Z",
+    "updated_at": "2026-08-16T19:36:03.677Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 10,
+  "fields": {
+    "author": 9,
+    "title": "testuser2 Post 1",
+    "content": "This is test post 1 created by testuser2. Edited",
+    "created_at": "2026-08-16T19:36:03.679Z",
+    "updated_at": "2026-08-16T21:06:12.787Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 11,
+  "fields": {
+    "author": 9,
+    "title": "testuser2 Post 2",
+    "content": "This is test post 2 created by testuser2.",
+    "created_at": "2026-08-16T19:36:03.682Z",
+    "updated_at": "2026-08-16T19:36:03.682Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 12,
+  "fields": {
+    "author": 9,
+    "title": "testuser2 Post 3",
+    "content": "This is test post 3 created by testuser2.",
+    "created_at": "2026-08-16T19:36:03.684Z",
+    "updated_at": "2026-08-16T19:36:03.684Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 13,
+  "fields": {
+    "author": 9,
+    "title": "testuser2 Post 4",
+    "content": "This is test post 4 created by testuser2.",
+    "created_at": "2026-08-16T19:36:03.687Z",
+    "updated_at": "2026-08-16T19:36:03.687Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 14,
+  "fields": {
+    "author": 10,
+    "title": "testuser3 Post 1",
+    "content": "This is test post 1 created by testuser3.",
+    "created_at": "2026-08-16T19:36:03.690Z",
+    "updated_at": "2026-08-16T19:36:03.690Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 15,
+  "fields": {
+    "author": 10,
+    "title": "testuser3 Post 2",
+    "content": "This is test post 2 created by testuser3.",
+    "created_at": "2026-08-16T19:36:03.692Z",
+    "updated_at": "2026-08-16T19:36:03.692Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 16,
+  "fields": {
+    "author": 10,
+    "title": "testuser3 Post 3",
+    "content": "This is test post 3 created by testuser3.",
+    "created_at": "2026-08-16T19:36:03.695Z",
+    "updated_at": "2026-08-16T19:36:03.695Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 17,
+  "fields": {
+    "author": 10,
+    "title": "testuser3 Post 4",
+    "content": "This is test post 4 created by testuser3.",
+    "created_at": "2026-08-16T19:36:03.699Z",
+    "updated_at": "2026-08-16T19:36:03.699Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 18,
+  "fields": {
+    "author": 11,
+    "title": "testuser4 Post 1",
+    "content": "This is test post 1 created by testuser4.",
+    "created_at": "2026-08-16T19:36:03.702Z",
+    "updated_at": "2026-08-16T19:36:03.702Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 19,
+  "fields": {
+    "author": 11,
+    "title": "testuser4 Post 2",
+    "content": "This is test post 2 created by testuser4.",
+    "created_at": "2026-08-16T19:36:03.705Z",
+    "updated_at": "2026-08-16T19:36:03.705Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 20,
+  "fields": {
+    "author": 11,
+    "title": "testuser4 Post 3",
+    "content": "This is test post 3 created by testuser4.",
+    "created_at": "2026-08-16T19:36:03.708Z",
+    "updated_at": "2026-08-16T19:36:03.708Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 21,
+  "fields": {
+    "author": 11,
+    "title": "testuser4 Post 4",
+    "content": "This is test post 4 created by testuser4.",
+    "created_at": "2026-08-16T19:36:03.711Z",
+    "updated_at": "2026-08-16T19:36:03.711Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 22,
+  "fields": {
+    "author": 12,
+    "title": "testuser5 Post 1",
+    "content": "This is test post 1 created by testuser5.",
+    "created_at": "2026-08-16T19:36:03.713Z",
+    "updated_at": "2026-08-16T19:36:03.713Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 23,
+  "fields": {
+    "author": 12,
+    "title": "testuser5 Post 2",
+    "content": "This is test post 2 created by testuser5.",
+    "created_at": "2026-08-16T19:36:03.716Z",
+    "updated_at": "2026-08-16T19:36:03.716Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 24,
+  "fields": {
+    "author": 12,
+    "title": "testuser5 Post 3",
+    "content": "This is test post 3 created by testuser5.",
+    "created_at": "2026-08-16T19:36:03.719Z",
+    "updated_at": "2026-08-16T19:36:03.719Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 25,
+  "fields": {
+    "author": 12,
+    "title": "testuser5 Post 4",
+    "content": "This is test post 4 created by testuser5.",
+    "created_at": "2026-08-16T19:36:03.721Z",
+    "updated_at": "2026-08-16T19:36:03.721Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 26,
+  "fields": {
+    "author": 13,
+    "title": "testuser6 Post 1",
+    "content": "This is test post 1 created by testuser6.",
+    "created_at": "2026-08-16T19:36:03.724Z",
+    "updated_at": "2026-08-16T19:36:03.724Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 27,
+  "fields": {
+    "author": 13,
+    "title": "testuser6 Post 2",
+    "content": "This is test post 2 created by testuser6.",
+    "created_at": "2026-08-16T19:36:03.726Z",
+    "updated_at": "2026-08-16T19:36:03.726Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 28,
+  "fields": {
+    "author": 13,
+    "title": "testuser6 Post 3",
+    "content": "This is test post 3 created by testuser6.",
+    "created_at": "2026-08-16T19:36:03.729Z",
+    "updated_at": "2026-08-16T19:36:03.729Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 29,
+  "fields": {
+    "author": 13,
+    "title": "testuser6 Post 4",
+    "content": "This is test post 4 created by testuser6.",
+    "created_at": "2026-08-16T19:36:03.731Z",
+    "updated_at": "2026-08-16T19:36:03.731Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 1,
+  "fields": {
+    "post": 10,
+    "author": 9,
+    "content": "Comment no.1 edited",
+    "created_at": "2026-08-16T21:36:23.572Z",
+    "updated_at": "2026-08-16T21:38:21.942Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 2,
+  "fields": {
+    "post": 6,
+    "author": 9,
+    "content": "yooo edited",
+    "created_at": "2026-08-16T21:40:14.166Z",
+    "updated_at": "2026-08-16T21:40:26.097Z"
+  }
+},
+{
+  "model": "posts.comment",
+  "pk": 3,
+  "fields": {
+    "post": 22,
+    "author": 8,
+    "content": "yoho",
+    "created_at": "2026-08-17T09:32:39.482Z",
+    "updated_at": "2026-08-17T09:32:39.482Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 2,
+  "fields": {
+    "post": 10,
+    "user": 8,
+    "created_at": "2026-08-16T21:04:17.365Z"
+  }
+},
+{
+  "model": "posts.like",
+  "pk": 4,
+  "fields": {
+    "post": 6,
+    "user": 9,
+    "created_at": "2026-08-16T21:40:07.184Z"
+  }
+}
+]
