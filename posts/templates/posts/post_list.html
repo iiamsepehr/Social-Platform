@@ -8,7 +8,10 @@
 
 <body>
 
-<h1>Posts</h1>
+<h1>
+    Posts
+</h1>
+
 
 {% if request.user.is_authenticated %}
 
@@ -18,40 +21,174 @@
 
 {% endif %}
 
+
 <hr>
 
 
-{% for post in posts %}
+<!-- Search & Filter -->
+<form method="GET">
+
+    <input
+        type="text"
+        name="q"
+        placeholder="Search..."
+        value="{{ query }}"
+    >
+
+
+    <input
+        type="text"
+        name="author"
+        placeholder="Author..."
+        value="{{ author }}"
+    >
+
+
+    <select name="sort">
+
+        <option
+            value="newest"
+            {% if sort == "newest" %}
+                selected
+            {% endif %}
+        >
+            Newest
+        </option>
+
+
+        <option
+            value="oldest"
+            {% if sort == "oldest" %}
+                selected
+            {% endif %}
+        >
+            Oldest
+        </option>
+
+
+        <option
+            value="title_asc"
+            {% if sort == "title_asc" %}
+                selected
+            {% endif %}
+        >
+            Title A-Z
+        </option>
+
+
+        <option
+            value="title_desc"
+            {% if sort == "title_desc" %}
+                selected
+            {% endif %}
+        >
+            Title Z-A
+        </option>
+
+    </select>
+
+
+    <button type="submit">
+        Apply
+    </button>
+
+</form>
+
+
+<hr>
+
+<p>
+    {{ page_obj.paginator.count }}
+    post(s) found.
+</p>
+
+<!-- Posts -->
+
+{% for post in page_obj %}
 
     <article>
 
         <h2>
+
             <a href="{% url 'post_detail' post.id %}">
                 {{ post.title }}
             </a>
+
         </h2>
 
-        <p>
-            Author:
-            {{ post.author.username }}
-        </p>
 
         <p>
+
+            Author:
+            {{ post.author.username }}
+
+        </p>
+
+
+        <p>
+
             Created:
             {{ post.created_at }}
+
         </p>
 
     </article>
 
+
     <hr>
+
 
 {% empty %}
 
     <p>
-        No posts yet.
+        No posts found.
     </p>
 
 {% endfor %}
+
+
+
+<!-- Pagination -->
+
+<div>
+
+    {% if page_obj.has_previous %}
+
+        <a href="?q={{ query }}&author={{ author }}&sort={{ sort }}&page=1">
+            First
+        </a>
+
+
+        <a href="?q={{ query }}&author={{ author }}&sort={{ sort }}&page={{ page_obj.previous_page_number }}">
+            Previous
+        </a>
+
+    {% endif %}
+
+
+    <span>
+
+        Page {{ page_obj.number }}
+        of {{ page_obj.paginator.num_pages }}
+
+    </span>
+
+
+    {% if page_obj.has_next %}
+
+        <a href="?q={{ query }}&author={{ author }}&sort={{ sort }}&page={{ page_obj.next_page_number }}">
+            Next
+        </a>
+
+
+        <a href="?q={{ query }}&author={{ author }}&sort={{ sort }}&page={{ page_obj.paginator.num_pages }}">
+            Last
+        </a>
+
+    {% endif %}
+
+</div>
+
 
 </body>
 

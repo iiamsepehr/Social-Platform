@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import SignupForm, ChangeUsernameForm, ChangeEmailForm, ChangePasswordForm, DeleteAccountForm
 from .decorators import admin_required
 from django.utils import timezone
+from .models import User, Follow, Notification
+
 
 def signup(request):
 
@@ -324,4 +326,109 @@ def admin_test(request):
     return render(
         request,
         "accounts/profile.html"
+    )
+
+
+def user_profile(request, user_id):
+
+    profile_user = get_object_or_404(
+        User,
+        id=user_id
+    )
+
+    is_following = False
+
+    if request.user.is_authenticated:
+
+        is_following = Follow.objects.filter(
+            follower=request.user,
+            following=profile_user
+        ).exists()
+
+    return render(
+        request,
+        "accounts/user_profile.html",
+        {
+            "profile_user": profile_user,
+            "is_following": is_following,
+        }
+    )
+
+@login_required
+def follow_user(request, user_id):
+
+    if request.method != "POST":
+        return redirect(
+            "user_profile",
+            user_id=user_id
+        )
+
+    target = get_object_or_404(
+        User,
+        id=user_id
+    )
+
+    if target == request.user:
+        return redirect(
+            "user_profile",
+            user_id=target.id
+        )
+
+    follow, created = Follow.objects.get_or_create(
+        follower=request.user,
+        following=target
+    )
+
+    if created:
+
+        Notification.objects.create(
+            recipient=target,
+            actor=request.user,
+            notification_type=Notification.FOLLOW
+        )
+
+    return redirect(
+        "user_profile",
+        user_id=target.id
+    )
+
+@login_required
+def unfollow_user(request, user_id):
+
+    if request.method != "POST":
+        return redirect(
+            "user_profile",
+            user_id=user_id
+        )
+
+    target = get_object_or_404(
+        User,
+        id=user_id
+    )
+
+    Follow.objects.filter(
+        follower=request.user,
+        following=target
+    ).delete()
+
+    return redirect(
+        "user_profile",
+        user_id=target.id
+    )
+
+@login_required
+def notifications(request):
+
+    notifications = request.user.notifications.select_related(
+        "actor",
+        "post",
+        "comment"
+    ).order_by("-created_at")
+
+    return render(
+        request,
+        "accounts/notifications.html",
+        {
+            "notifications": notifications
+        }
     )

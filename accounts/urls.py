@@ -96,4 +96,28 @@ urlpatterns = [
         name="admin_timeout_user"
     ),
 
+    path(
+        "users/<int:user_id>/",
+        views.user_profile,
+        name="user_profile"
+    ),
+
+    path(
+        "users/<int:user_id>/follow/",
+        views.follow_user,
+        name="follow_user"
+    ),
+
+    path(
+        "users/<int:user_id>/unfollow/",
+        views.unfollow_user,
+        name="unfollow_user"
+    ),
+
+    path(
+        "notifications/",
+        views.notifications,
+        name="notifications"
+    ),
+
 ]

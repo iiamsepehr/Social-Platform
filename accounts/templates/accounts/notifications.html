@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Notifications</title>
+</head>
+
+<body>
+
+<h1>
+    Notifications
+</h1>
+
+
+{% for notification in notifications %}
+
+    <div>
+
+        <strong>
+            {{ notification.actor.username }}
+        </strong>
+
+
+        {% if notification.notification_type == "LIKE" %}
+
+            liked your post.
+
+        {% elif notification.notification_type == "COMMENT" %}
+
+            commented on your post.
+
+        {% elif notification.notification_type == "FOLLOW" %}
+
+            started following you.
+
+        {% endif %}
+
+
+        <small>
+            {{ notification.created_at }}
+        </small>
+
+    </div>
+
+    <hr>
+
+{% empty %}
+
+    <p>
+        No notifications.
+    </p>
+
+{% endfor %}
+
+</body>
+
+</html>

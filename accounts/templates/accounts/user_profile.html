@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>{{ profile_user.username }}</title>
+</head>
+
+<body>
+
+<h1>
+    {{ profile_user.username }}
+</h1>
+
+
+<p>
+    Posts:
+    {{ profile_user.posts.count }}
+</p>
+
+<p>
+    Followers:
+    {{ profile_user.followers.count }}
+</p>
+
+<p>
+    Following:
+    {{ profile_user.following.count }}
+</p>
+
+
+{% if request.user.is_authenticated and request.user != profile_user %}
+
+    {% if is_following %}
+
+        <form method="POST"
+              action="{% url 'unfollow_user' profile_user.id %}">
+
+            {% csrf_token %}
+
+            <button type="submit">
+                Unfollow
+            </button>
+
+        </form>
+
+    {% else %}
+
+        <form method="POST"
+              action="{% url 'follow_user' profile_user.id %}">
+
+            {% csrf_token %}
+
+            <button type="submit">
+                Follow
+            </button>
+
+        </form>
+
+    {% endif %}
+
+{% endif %}
+
+
+<hr>
+
+<h2>
+    Posts
+</h2>
+
+
+{% for post in profile_user.posts.all %}
+
+    <a href="{% url 'post_detail' post.id %}">
+        {{ post.title }}
+    </a>
+
+    <br>
+
+{% empty %}
+
+    <p>
+        No posts.
+    </p>
+
+{% endfor %}
+
+</body>
+
+</html>

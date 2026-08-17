@@ -46,4 +46,34 @@ urlpatterns = [
         name="admin_edit_post"
     ),
 
+    path(
+        "posts/<int:post_id>/like/",
+        views.like_post,
+        name="post_like"
+    ),
+
+    path(
+        "posts/<int:post_id>/unlike/",
+        views.unlike_post,
+        name="post_unlike"
+    ),
+
+    path(
+        "posts/<int:post_id>/comment/",
+        views.add_comment,
+        name="comment_add"
+    ),
+
+    path(
+        "comments/<int:comment_id>/edit/",
+        views.edit_comment,
+        name="comment_edit"
+    ),
+
+    path(
+        "comments/<int:comment_id>/delete/",
+        views.delete_comment,
+        name="comment_delete"
+    ),
+
 ]

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Edit Comment</title>
+</head>
+
+<body>
+
+<h1>
+    Edit Comment
+</h1>
+
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Save
+    </button>
+
+</form>
+
+
+<a href="{% url 'post_detail' comment.post.id %}">
+    Cancel
+</a>
+
+</body>
+
+</html>

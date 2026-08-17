@@ -28,6 +28,127 @@
     {{ post.content }}
 </p>
 
+<hr>
+
+<p>
+    Likes:
+    {{ post.likes.count }}
+</p>
+
+
+{% if request.user.is_authenticated %}
+
+    {% if user_liked %}
+
+        <form method="POST"
+              action="{% url 'post_unlike' post.id %}">
+
+            {% csrf_token %}
+
+            <button type="submit">
+                Unlike
+            </button>
+
+        </form>
+
+    {% else %}
+
+        <form method="POST"
+              action="{% url 'post_like' post.id %}">
+
+            {% csrf_token %}
+
+            <button type="submit">
+                Like
+            </button>
+
+        </form>
+
+    {% endif %}
+
+{% endif %}
+
+<hr>
+
+<h2>
+    Comments
+</h2>
+
+{% for comment in post.comments.all %}
+
+    <div>
+
+        <strong>
+            {{ comment.author.username }}
+        </strong>
+
+        <p>
+            {{ comment.content }}
+        </p>
+
+        <small>
+            {{ comment.created_at }}
+        </small>
+
+
+        {% if request.user == comment.author %}
+
+            <a href="{% url 'comment_edit' comment.id %}">
+                Edit
+            </a>
+
+        {% endif %}
+
+
+        {% if request.user == comment.author or request.user.is_admin %}
+
+            <form method="POST"
+                  action="{% url 'comment_delete' comment.id %}">
+
+                {% csrf_token %}
+
+                <button type="submit">
+                    Delete
+                </button>
+
+            </form>
+
+        {% endif %}
+
+    </div>
+
+    <hr>
+
+{% empty %}
+
+    <p>
+        No comments yet.
+    </p>
+
+{% endfor %}
+
+
+{% if request.user.is_authenticated %}
+
+    <h3>
+        Add Comment
+    </h3>
+
+    <form method="POST"
+          action="{% url 'comment_add' post.id %}">
+
+        {% csrf_token %}
+
+        {{ comment_form.as_p }}
+
+        <button type="submit">
+            Comment
+        </button>
+
+    </form>
+
+{% endif %}
+
 
 {% if request.user == post.author %}
 
