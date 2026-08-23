@@ -120,3 +120,14 @@ class Notification(models.Model):
     is_read = models.BooleanField(
         default=False
     )
+
+    class Meta:
+
+        ordering = ["-created_at"]
+
+        indexes = [
+            models.Index(
+                fields=["recipient", "-created_at"],
+                name="notif_recipient_created_idx",
+            ),
+        ]

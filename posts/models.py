@@ -24,6 +24,15 @@ class Post(models.Model):
         auto_now=True
     )
 
+    class Meta:
+        ordering = ["-created_at"]
+        indexes = [
+            models.Index(
+                fields=["author", "-created_at"],
+                name="post_author_created_idx",
+            ),
+        ]
+
     def __str__(self):
         return self.title
 
