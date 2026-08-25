@@ -3,4 +3,6 @@ psycopg[binary]
 python-dotenv
 djangorestframework
 django-filter
+djangorestframework-simplejwt
 gunicorn
+whitenoise
